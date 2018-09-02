@@ -1,6 +1,6 @@
 {{ if .Site.Params.thumbnailImage }}
   {{ if .Params.thumbnailimage }}
-    {{ .Scratch.Set "thumbnailImage" (.Params.thumbnailimage | absURL) }}
+    {{ .Scratch.Set "thumbnailImage" ((printf "%s%s" .URL .Params.thumbnailimage)) }}
   {{ else }}
     {{ if or .Params.autothumbnailimage (and .Site.Params.autoThumbnailImage (ne .Params.autothumbnailimage false)) }}
       {{ if .Params.gallery }}
