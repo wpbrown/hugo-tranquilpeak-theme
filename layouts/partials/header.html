@@ -6,9 +6,7 @@
   {{ with .Site.Params.header.rightLink }}
     <div class="header-right-picture">
     {{ if not $.Site.Params.header.rightLink.icon }}
-      {{ with ($.Scratch.Get "authorPicture") }}
-        <img class="header-picture" src="{{ . }}{{ if in . "//www.gravatar.com/avatar/" }}?s=90{{ end }}" alt="{{ i18n "global.author_picture" }}" />
-      {{ end }}
+        <img class="header-picture" src="{{ absURL `images/logo.png` }}" alt="{{ i18n "global.author_picture" }}" />
     {{ end }}
     </div>
   {{ end }}
